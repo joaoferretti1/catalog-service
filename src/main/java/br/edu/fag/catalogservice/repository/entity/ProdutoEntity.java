@@ -9,14 +9,15 @@ import java.time.LocalDateTime;
 
 public class ProdutoEntity {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-        private Integer id;
-        private String nome;
-        private String descricao;
-        private Double preco;
-        private LocalDateTime criadoEm;
+    private Integer id;
+    private String nome;
+    private String descricao;
+    private Double preco;
+    private LocalDateTime criadoEm;
+    private Boolean active;
 
 
     public LocalDateTime getCriadoEm() {
@@ -36,27 +37,34 @@ public class ProdutoEntity {
     }
 
     public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public String getDescricao() {
-            return descricao;
-        }
-
-        public void setDescricao(String descricao) {
-            this.descricao = descricao;
-        }
-
-        public Double getPreco() {
-            return preco;
-        }
-
-        public void setPreco(Double preco) {
-            this.preco = preco;
-        }
+        return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+}

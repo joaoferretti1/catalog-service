@@ -4,11 +4,12 @@ import java.time.LocalDateTime;
 
 public class ProdutoDTO {
 
-    Integer id;
+    private Integer id;
     private String nome;
     private String descricao;
     private Double preco;
     private LocalDateTime criadoEm;
+    private Boolean active;
 
     public Integer getId() {
         return id;
@@ -50,6 +51,11 @@ public class ProdutoDTO {
         this.preco = preco;
     }
 
+    public Boolean getActive() {
+        return active;
+    }
 
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
 }
-

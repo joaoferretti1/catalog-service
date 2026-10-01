@@ -10,6 +10,7 @@ public class ProdutoDomain {
     private Double preco;
     private LocalDateTime criadoEm;
     private Integer id;
+    private Boolean active;
 
     public Integer getId() {
         return id;
@@ -51,6 +52,14 @@ public class ProdutoDomain {
         this.preco = preco;
     }
 
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public void tamanhoNome() {
         if (nome.length() < 3) {
             throw new RuntimeException("O nome do produto deve ter pelo menos 3 caracteres.");
@@ -58,10 +67,9 @@ public class ProdutoDomain {
     }
 
     public void precoAlto() {
-            if (preco >= PRECO_DE_PRODUTO_DE_ALTO_VALOR
-                    && (descricao == null || descricao.isBlank())) {
-                throw new RuntimeException("Produtos a partir de R$ 1.000,00 devem possuir uma descrição.");
-            }
+        if (preco >= PRECO_DE_PRODUTO_DE_ALTO_VALOR
+                && (descricao == null || descricao.isBlank())) {
+            throw new RuntimeException("Produtos a partir de R$ 1.000,00 devem possuir uma descrição.");
         }
     }
-
+}
